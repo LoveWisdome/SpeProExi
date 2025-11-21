@@ -92,8 +92,9 @@ public class PlatformerMovement : MonoBehaviour
         isGrounded = IsGrounded();
         ApplyGravity();
         rb.linearVelocity = velocity;
-        
+
         // Write movement animation code here. (Suggestion: send your current velocity into the Animator for both the x- and y-axis.)
+        animator.SetBool("IsWalking", velocity.x != 0);
     }
 
     private bool IsGrounded()
